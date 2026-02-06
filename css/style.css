@@ -161,7 +161,7 @@ body {
 }
 
 .close_button {
-    width: 40px;
+    width: 30px;
     height: 30px;
     position: absolute;
     background: transparent;
@@ -178,7 +178,7 @@ body {
     opacity: 1;
     visibility: visible;
     top: 10px;
-    left: 267px;
+    left: 275px;
 }
 
 .close_button::before{
