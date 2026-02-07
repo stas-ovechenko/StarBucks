@@ -30,9 +30,13 @@ body {
 }
 
 .container {
-    width: 1294px;
+    width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+}
+
+.btn_burg {
+    display: none;
 }
 
 .sub_navigation{
@@ -71,8 +75,11 @@ body {
 
 .main_content_first {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+
+.sub_main_content_first_image_adaptive img {
+    display: none;
 }
 
 .sub_main_content_first h1 {
@@ -88,10 +95,18 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.sub_main_content_first {
+    margin-right: 100px;
+}
+
 .sub_main_content_first p {
     font-weight: 400;
     font-size: 20px;
     color: rgba(255, 255, 255, 1);
+}
+
+.sub_main_content_first p:first-child {
+    line-height: 160%;
 }
 
 .sub_main_content_first_button {
@@ -265,6 +280,13 @@ body {
     width: 450px;
     height: auto;
     filter: drop-shadow(0 -8px 16px rgba(35, 114, 73, 0.55)) drop-shadow(0 8px 16px rgba(35, 114, 73, 0.55));
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(6deg); }
+    100% { transform: rotate(0); }
 }
 
 .main_content_second {
@@ -811,13 +833,21 @@ body {
     text-decoration: none;
 }
 
-.footer_content_dscrp {
+.footer_content_dscrp1,
+.footer_content_dscrp2,
+.footer_content_dscrp3,
+.footer_content_dscrp4,
+.footer_content_dscrp5 {
     color: rgba(187, 179, 179, 1);
     font-weight: 400;
     font-size: 20px;
 }
 
-.footer_content_dscrp li:nth-child(n+2){
+.footer_content_dscrp1 li:nth-child(n+2),
+.footer_content_dscrp2 li:nth-child(n+2),
+.footer_content_dscrp3 li:nth-child(n+2),
+.footer_content_dscrp4 li:nth-child(n+2),
+.footer_content_dscrp5 li:nth-child(n+2){
     margin-top: 15px;
 }
 
@@ -867,4 +897,391 @@ body {
     .footer_special_btn:hover {
         background-color: rgba(35, 114, 73, 1);
     }
+}
+
+@media (max-width: 992px) {
+
+    .body.active_form {
+        overflow: hidden;
+    }
+
+    .active_form_filter {
+        display: none;
+    }
+
+    .active_form_filter.active_filter {
+        display: none;
+    }
+
+    .container {
+        width: 768px;
+    }
+
+    .btn_burg {
+        display: inline-block;
+        width: 30px;
+        height: 25px;
+        position: relative;
+        top: 0;
+        left: 0;
+        background: transparent;
+        border: none;
+        margin: 45px 0 0 65px;
+        cursor: pointer;
+        transition: all 0.7s ease;
+        z-index: 12;
+    }
+
+    .btn_burg::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, rgba(35,114,73,1), rgba(53,198,107,1), rgba(35,114,73,1));
+        transition: all 0.3s ease;
+    }
+
+    .btn_burg span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 45%;
+        left: 0;
+        background: linear-gradient(90deg, rgba(35,114,73,1), rgba(53,198,107,1), rgba(35,114,73,1));
+        transition: all 0.3s ease;
+    }
+
+    .btn_burg::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, rgba(35,114,73,1), rgba(53,198,107,1), rgba(35,114,73,1));
+        transition: all 0.3s ease;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        max-height: 100%;
+
+    }
+
+    .navigation.burger_menu_change {
+        visibility: visible;
+        width: 400px;
+        left: 0;
+        top: 0;
+        height: 425px;
+        background-color: #fff;
+        z-index: 11;
+        filter: drop-shadow(0 -8px 16px rgba(35, 114, 73, 0.55)) drop-shadow(0 8px 16px rgba(35, 114, 73, 0.55));
+    }
+
+    .btn_burg.burger_menu_change::before{
+        transform: rotate(45deg);
+        top: 10px;
+        background: #121517;
+    }
+
+    .btn_burg.burger_menu_change::after{
+        transform: rotate(-45deg);
+        bottom: 12px;
+        background: #121517;
+    }
+
+    .btn_burg.burger_menu_change span {
+        transform: scale(0);
+    }
+
+    .sub_navigation {
+        display: inline-block;
+        margin-top: 60px;
+        margin-left: 50px;
+    }
+
+    .sub_navigation li:first-child {
+        font-weight: 800;
+        font-size: 30px;
+        margin-left: 99px;
+    }
+
+    .sub_navigation li:nth-child(n+2) {
+        font-weight: 600;
+        font-size: 30px;
+        color: #121517;
+        margin-top: 50px;
+    }
+
+    .main_content_first {
+        display: block;
+    }
+
+    .sub_main_content_first {
+        margin-right: 0;
+    }
+
+    .sub_main_content_first_image_adaptive img {
+        display: block;
+        margin: 0 auto;
+        width: 271px;
+        height: auto;
+        filter: drop-shadow(0 -8px 16px rgba(35, 114, 73, 0.55)) drop-shadow(0 8px 16px rgba(35, 114, 73, 0.55));
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: rotate(0); }
+        50% { transform: rotate(6deg); }
+        100% { transform: rotate(0); }  
+    }   
+
+    .sub_main_content_first h1 {
+        text-align: center;
+        font-weight: 800;
+        font-size: 48px;    
+        margin-top: 25px;
+    }
+
+    .sub_main_content_first p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 160%;
+    }
+
+    .sub_main_content_first_button {
+        justify-content: center;
+    }
+
+    .sub_main_content_button_coffee {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .sub_main_content_button_more {
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .menu_form {
+        display: none;
+    }
+
+    .sub_main_content_first_users {
+        justify-content: center;
+    }
+
+    .sub_main_content_first_users p:first-child {
+        font-weight: 400;
+        font-size: 41px;
+    }
+
+    .sub_main_content_first_users p:nth-child(n+2) {
+        font-weight: 400;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .sub_main_content_first_image {
+        display: none;
+    }
+
+    .main_content_second {
+        padding: 25px 0;
+        max-width: 576px;
+        margin: 60px auto 0 auto;
+    }
+
+    .main_content_second_flag1,
+    .main_content_second_flag2 {
+        display: none;
+    }
+
+    .sub_main_content_second {
+        flex-direction: column;
+    }
+
+    .sub_main_content_second_items h2 {
+        padding: 0;
+    }
+
+    .sub_main_content_second_items::before {
+        top: 31%;
+        width: 150px;
+        height: 150px;
+    }
+
+    .sub_main_content_second_items h2 {
+        font-weight: 500;
+        font-size: 19px;
+        color: rgba(18, 21, 23, 1);
+        padding-bottom: 20px;
+    }
+
+    .sub_main_content_second_items p {
+        font-weight: 400;
+        font-size: 11px;
+        color: rgba(18, 21, 23, 1);
+        padding-bottom: 20px;
+    }
+
+    .sub_we_make_delicious_content {
+        display: block;
+        text-align: center;
+    }
+
+    .make_delicious_content {
+        display: none;
+    }
+
+    .cooking_process_content h3  {
+        font-size: 48px;
+    }
+
+    .cooking_process_content p {
+        font-size: 14px;
+    }
+
+    .cooking_process_content img {
+        border-radius: 40px;
+    }
+
+    .new_our_products_content_title {
+            justify-content: center;
+    }
+
+    .new_our_products_content_title h4 {
+        font-size: 48px;
+    }
+
+    .new_our_products_content_title p:first-child {
+        font-size: 14px;
+    }
+
+    .block_new_our_products_coffee {
+            justify-content: center;
+    }
+
+    .new_our_products_coffee {
+        max-width: 342px;
+    }
+
+    .sub_new_our_products_coffee_cappuccino h4,
+    .sub_new_our_products_coffee_latte h4,
+    .sub_new_our_products_coffee_espresso h4,
+    .sub_new_our_products_coffee_americano h4 {
+        font-size: 21px;
+    }
+
+    .sub_new_our_products_coffee_cappuccino p,
+    .sub_new_our_products_coffee_latte p,
+    .sub_new_our_products_coffee_espresso p,
+    .sub_new_our_products_coffee_americano p  {
+        font-size: 13px;
+    }
+
+    .sub_new_our_products_coffee_cappuccino button,
+    .sub_new_our_products_coffee_latte button,
+    .sub_new_our_products_coffee_espresso button,
+    .sub_new_our_products_coffee_americano button {
+        padding: 10px 25px;
+        font-size: 12px;
+    }
+    .our_new_events_content_title {
+        justify-content: center;
+    }
+
+    .our_new_events_content_title p {
+        font-size: 14px
+    }
+
+    .our_new_events_content_title h5 {
+        font-size: 48px;
+    }
+
+    .our_new_events_content_description_first {
+        flex-direction: column;
+    }
+
+    .our_new_events_content_description_second {
+        display: none
+    }
+
+    .our_new_events_content_description_first_items1 {
+        margin-bottom: 25px;
+    }
+
+    .our_new_events_content_description_first_items1,
+    .our_new_events_content_description_first_items2 {
+        width: 288px;
+        height: 137px;
+    }
+
+    .our_new_events_content_description_first_items1 h5,
+    .our_new_events_content_description_first_items2 h5 {
+        font-size: 18px;
+    }
+
+    .our_new_events_content_description_first_items1 button,
+    .our_new_events_content_description_first_items2 button {
+        padding: 10px 30px;
+        font-size: 13px;
+    }
+
+    .our_contacts_content {
+        justify-content: center;
+    }
+
+    .our_contacts_content_title h6 {
+        font-size: 48px;
+    }
+
+    .our_contacts_content_title p {
+        font-size: 14px;
+    }
+
+    .our_contacts_content_title a {
+        font-size: 21px;
+    }
+
+    .our_contacts_content_title img {
+        width: 38px;
+    }
+
+    .our_contacts_content_image {
+        display: none;
+    }
+
+    .footer_content {
+        justify-content: space-evenly;
+    }
+
+    .footer_content_dscrp1,
+    .footer_content_dscrp2,
+    .footer_content_dscrp4 {
+        display: none;
+    }
+
+    .footer_special_btn {
+        margin: 0;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
 }

@@ -80,3 +80,10 @@ validation.addField('#name', [
     document.getElementById('body').classList.remove('active_form');
     document.getElementById('active_form_filter').classList.remove('active_filter');
 });
+
+document.getElementById('btn_burg').addEventListener('click', () => {
+    document.getElementById('navigation').classList.toggle('burger_menu_change');
+    document.getElementById('btn_burg').classList.toggle('burger_menu_change');
+    document.getElementById('active_form_filter').classList.toggle('active_filter');
+    document.getElementById('body').classList.toggle('active_form');
+});
