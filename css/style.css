@@ -146,21 +146,22 @@ body {
 }
 
 .menu_form {
-    position: absolute;
     background-color: #31393e;
-    max-width: 600px;
-    border-radius: 15px;
-    top: -286px;
-    left: 486px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     z-index: 20;
+    top: 0;
+    left: 0;
 }
 
 .menu_form.active_menu_form  {
-    top: -343px;
-    left: 486px;
     opacity: 1;
     visibility: visible;
 }
@@ -192,7 +193,7 @@ body {
 .menu_form.active_menu_form .close_button {
     opacity: 1;
     visibility: visible;
-    top: 10px;
+    top: 11px;
     left: 275px;
 }
 
@@ -472,7 +473,6 @@ body {
 .new_our_products_coffee_americano {
     scroll-snap-align: center;
 }
-
 
 .new_our_products_coffee_latte {
     margin: 0 55px;
@@ -937,14 +937,6 @@ body {
         font-size: 12px;
         width: 100px;
     }
-
-    .menu_form.active_menu_form  {
-        top: -285px;
-        left: 210px;
-        opacity: 1;
-        visibility: visible;
-    }
-
     .sub_main_content_first_users p:first-child {
         font-size: 41px;
     }
@@ -1153,7 +1145,7 @@ body {
         height: 25px;
         position: relative;
         top: 0;
-        left: 0;
+        right: 0;
         background: transparent;
         border: none;
         margin: 45px 0 0 65px;
@@ -1161,7 +1153,6 @@ body {
         transition: all 0.7s ease;
         z-index: 12;
     }
-
     .btn_burg::before {
         content: "";
         position: absolute;
@@ -1208,7 +1199,30 @@ body {
         bottom: 11px;
     }
 
-    .sub_navigation {
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 75%;
+        background-color: #121517;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        z-index: 10;
+    }
+
+    .navigation.burger_menu_change {
+        transform: translateX(0);
+}
+
+	.sub_navigation {
+        margin-top: 65px;
+        transform: translateX(70%);
+        display: block;
+        z-index: 15;
+}
+
+    .sub_navigation li:first-child {
         display: none;
     }
 
@@ -1259,10 +1273,6 @@ body {
         font-size: 16px;
     }
 
-    .menu_form {
-        display: none;
-    }
-
     .sub_main_content_first_users {
         justify-content: center;
     }
@@ -1280,6 +1290,14 @@ body {
 
     .sub_main_content_first_image {
         display: none;
+    }
+
+    .dropdown_menu {
+        padding: 15px;
+    }
+
+    .dropdown_menu_form_input {
+        padding: 10px 25px;
     }
 
     .main_content_second {
@@ -1472,13 +1490,15 @@ body {
 }
 
 @media (max-width: 576px) {
-        .container {
-        max-width: 476px;
+    .container {
+        max-width: 375px;
         margin: 0 auto;
         width: 100%;
     }
 
-
+    .sub_navigation {
+        transform: translateX(60%);
+    }
     .sub_main_content_first_image_adaptive img {
         display: block;
         margin: 0 auto;
@@ -1520,7 +1540,6 @@ body {
         max-width: 350px;
     }
 
-
     .sub_main_content_second_items::before {
         width: 125px;
         height: 125px;
@@ -1555,8 +1574,9 @@ body {
 
     .new_our_products_coffee {
         max-width: 245px;
+        width: 100%;
+        margin: 0 auto;
     }
-
 
     .our_new_events_content_title p {
         font-size: 9px
