@@ -193,8 +193,6 @@ body {
 .menu_form.active_menu_form .close_button {
     opacity: 1;
     visibility: visible;
-    top: 11px;
-    left: 275px;
 }
 
 .close_button::before{
@@ -1083,11 +1081,7 @@ body {
     }
 
     .new_our_products_coffee_btn {
-        margin: 0 auto;
-    }
-
-    .new_our_products_coffee_btn {
-        margin-left: 0;
+        margin: 0 15px;
     }
 
     .our_contacts_content {
@@ -1213,14 +1207,14 @@ body {
 
     .navigation.burger_menu_change {
         transform: translateX(0);
-}
+    }
 
 	.sub_navigation {
         margin-top: 65px;
         transform: translateX(70%);
         display: block;
         z-index: 15;
-}
+    }
 
     .sub_navigation li:first-child {
         display: none;
@@ -1292,17 +1286,13 @@ body {
         display: none;
     }
 
-    .dropdown_menu {
-        padding: 15px;
-    }
-
     .dropdown_menu_form_input {
         padding: 10px 25px;
     }
 
     .main_content_second {
         padding: 25px 0;
-        max-width: 576px;
+        max-width: 375px;
         margin: 60px auto 0 auto;
     }
 
@@ -1376,11 +1366,19 @@ body {
     }
 
     .block_new_our_products_coffee {
-            justify-content: center;
+        justify-content: center;
     }
 
     .new_our_products_coffee {
         max-width: 342px;
+    }
+
+    .sub_new_our_products_coffee_cappuccino::before,
+    .sub_new_our_products_coffee_latte::before,
+    .sub_new_our_products_coffee_espresso::before,
+    .sub_new_our_products_coffee_americano::before {
+        top: 22px;
+        left: 59px;
     }
 
     .sub_new_our_products_coffee_cappuccino h4,
@@ -1576,6 +1574,14 @@ body {
         max-width: 245px;
         width: 100%;
         margin: 0 auto;
+    }
+
+    .sub_new_our_products_coffee_cappuccino ,
+    .sub_new_our_products_coffee_latte ,
+    .sub_new_our_products_coffee_espresso ,
+    .sub_new_our_products_coffee_americano  {
+        padding: 10px 25px;
+        margin-left: 15px;
     }
 
     .our_new_events_content_title p {
